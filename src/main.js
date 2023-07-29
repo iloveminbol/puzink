@@ -1,11 +1,13 @@
 import Phaser from "phaser";
 import GhostBusterScene from "./Scenes/GhostBusterScene";
+import GameOverScene from "./Scenes/GameOverScene";
 
 const config = {
   type: Phaser.AUTO,
-  width: 1000,
-  height: 1000,
+  width: 512,
+  height: 500,
   scale: {
+    mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
   physics: {
@@ -14,7 +16,7 @@ const config = {
       gravity: { y: 200 },
     },
   },
-  scene: [GhostBusterScene],
+  scene: [GhostBusterScene, GameOverScene],
 };
 
-const game = new Phaser.Game(config);
+export default new Phaser.Game(config);
